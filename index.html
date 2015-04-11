@@ -1,13 +1,14 @@
-<hr />
-
-<p>layout: default</p>
-
-<h2>title: 我的博客</h2>
+---
+layout: default
+title: 我的博客
+---
 
 <h1>{{ page.title }}</h1>
 
 <h2>最新文章</h2>
 
-<p>{% for post in site.posts %}
-  + {{ post.date | date_tostring }} <a href="{{ site.baseurl }} {{ post.title }}">{{ post.url  }}</a>
-{% endfor %}</p>
+<ul>
+{% for post in site.posts %}
+  <li>{{ post.date | date_tostring }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title  }}</a></li>
+{% endfor %}
+</ul>>
